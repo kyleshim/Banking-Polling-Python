@@ -49,13 +49,36 @@ with open(csvpath) as csvfile:
 
     # Print results
     print("Financial Analysis")
-    print("-------------------")
-    print(f"Total Months:{totalmonths}")
+    print("------------------")
+    print(f"Total Months: {totalmonths}")
     print(f"Total: {locale.currency(totalprofit, grouping=True)}")
     print(f"Average Change: {locale.currency(averagechange, grouping=True)}")
     print(f"Greatest Increase in Profits: {increasemonth} ({locale.currency(greatestincrease, grouping=True)})")
     print(f"Greatest Decrease in Profits: {decreasemonth} ({locale.currency(greatestdecrease, grouping=True)})")
 
+    # Specify the file to write to
+    output_path = os.path.join("analysis", "financial_analysis.txt")
+
+    # Open the file using "write" mode. Specify the variable to hold the contents
+    with open(output_path, 'w') as txtfile:
+        output = ['Financial Analysis', '-----------------']
+
+        txtfile.writelines("Financial Analysis")
+        txtfile.writelines('\n')
+        txtfile.write("------------------")
+        txtfile.writelines('\n')
+        txtfile.writelines(f"Total Months: {totalmonths}")
+        txtfile.writelines('\n')
+        txtfile.writelines(f"Total: {locale.currency(totalprofit, grouping=True)}")
+        txtfile.writelines('\n')
+        txtfile.writelines(f"Average Change: {locale.currency(averagechange, grouping=True)}")
+        txtfile.writelines('\n')
+        txtfile.writelines(f"Greatest Increase in Profits: {increasemonth} ({locale.currency(greatestincrease, grouping=True)})")
+        txtfile.writelines('\n')
+        txtfile.writelines(f"Greatest Decrease in Profits: {decreasemonth} ({locale.currency(greatestdecrease, grouping=True)})")
+        txtfile.writelines('\n')
+
+        
 
 # Total Months: Count of data rows w/o header
 # Total Profit/Losses: Variable that is added or subtracted each row
