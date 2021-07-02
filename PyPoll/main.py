@@ -21,13 +21,13 @@ with open(csvpath) as csvfile:
     total_list = []
     # Candidate dictionary
     candidates = {}
-
+    total_votes = 0
     for row in csvreader:
-    #    if row[2] not in unique_list:
-    #        unique_list.append(row[2])
+        if row[2] not in unique_list:
+            unique_list.append(row[2])
         total_list.append(row[2])    
-    print(total_list)
-
+        total_votes = total_votes+1
+    #print(total_list)
     #for row in csvreader:
     #    for name in unique_list:
     #    candidates[row] = candidates.get(row,0)+1
@@ -36,9 +36,22 @@ with open(csvpath) as csvfile:
             candidates[name] = candidates[name]+1
         else:
             candidates[name]=1
-        
-    print(unique_list)
-    print(candidates)
+    votes_list=[candidates['Khan'],candidates['Correy'],candidates['Li'],candidates["O'Tooley"]]
+    print(f'{votes_list}')
+    print("Election Results")
+    print("----------------")     
+    print(f"Total Votes: {total_votes}") 
+    print("----------------")
+    print(f'{unique_list[0]} : {candidates[unique_list[0]]}')     
+    print(f'{unique_list[1]} : {candidates[unique_list[1]]}')  
+    print(f'{unique_list[2]} : {candidates[unique_list[2]]}')  
+    print(f'{unique_list[3]} : {candidates[unique_list[3]]}')
+    print("----------------")
+    print(f'Winner: ')
+    print("----------------")
+
+    #print(unique_list)
+    #print(candidates)
 
 #    for row in csvreader:
 #        if row[2] == candidates["name"][0]:
@@ -58,7 +71,7 @@ with open(csvpath) as csvfile:
 #    unique_set = set(dummy)
  #   candidates["votes"].append(unique_set)
 #    print(unique_set)
-    print(candidates)
+#    print(candidates)
 #        for name in candidates:
 
         # for row in csv->for name in unique_list: add to variable if =
