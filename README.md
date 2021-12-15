@@ -43,4 +43,4 @@ Election Analysis was as follows:
 
 ![financial_analysis](PyBank/analysis/financial_analysis.png)
 
-![election_results](PyBank/analysis/election_results.png)
+![election_results](PyPoll/analysis/election_results.png)
