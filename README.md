@@ -41,6 +41,6 @@ Election Analysis was as follows:
 ###  Data Visualization:
 ----------------------
 
-![financial_analysis](PyBank/analysis/financial_analysis.txt)
+![financial_analysis](PyBank/analysis/financial_analysis.png)
 
-![elections_results](PyBank/analysis/elections_results.txt)
+![elections_results](PyBank/analysis/elections_results.png)
